@@ -1,0 +1,6 @@
+vim.keymap.set("n", "<Leader>j", "<cmd>JournalNew<cr>", { desc = "Journal_new testing" })
+return {
+  dir = "/Users/dot/dev/journalnew/",
+  name = "JournalNew",
+  lazy = false,
+}

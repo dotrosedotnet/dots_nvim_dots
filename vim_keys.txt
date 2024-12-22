@@ -1,0 +1,517 @@
+
+
+
+n  <Space>rÞ   *@<Nop>
+	Last set from Lua
+n  <Space>cÞ   *@<Nop>
+	Last set from Lua
+n  <Space>rs   *@:LspRestart<CR>
+                 Restart LSP
+	Last set from Lua
+n  <Space>d    *@<Lua 508: /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/lua/vim/diagnostic.lua:1272>
+                 Show line diagnostics
+	Last set from Lua
+n  <Space>D    *@<Cmd>Telescope diagnostics bufnr=0<CR>
+                 Show buffer diagnostics
+	Last set from Lua
+n  <Space>rn   *@<Lua 485: /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/lua/vim/lsp/buf.lua:271>
+                 Smart rename
+	Last set from Lua
+v  <Space>ca   *@<Lua 523: /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/lua/vim/lsp/buf.lua:762>
+                 See available code actions
+	Last set from Lua
+n  <Space>ca   *@<Lua 525: /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/lua/vim/lsp/buf.lua:762>
+                 See available code actions
+	Last set from Lua
+n  K           *@<Lua 140: /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/lua/vim/lsp/buf.lua:40>
+                 Show documentation for what is under cursor
+	Last set from Lua
+n  [d          *@<Lua 504: /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/lua/vim/diagnostic.lua:807>
+                 Go to previous diagnostic
+	Last set from Lua
+n  ]d          *@<Lua 440: /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/lua/vim/diagnostic.lua:853>
+                 Go to previous diagnostic
+	Last set from Lua
+n  gd          *@<Cmd>Telescope type_type_definitions<CR>
+                 Show LSP type definitions
+	Last set from Lua
+n  gD          *@<Lua 524: /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/lua/vim/lsp/buf.lua:64>
+                 Go to declaration
+	Last set from Lua
+n  gR          *@<Cmd>Telescope lsp_references<CR>
+                 Show LSP references
+	Last set from Lua
+x  <BS>        *@<Lua 493: ~/.local/share/nvim/lazy/nvim-treesitter/lua/nvim-treesitter/incremental_selection.lua:118>
+                 Shrink selection to previous named node
+	Last set from Lua
+n  <C-Space>   *@<Lua 492: ~/.local/share/nvim/lazy/nvim-treesitter/lua/nvim-treesitter/incremental_selection.lua:15>
+                 Start selecting nodes with nvim-treesitter
+	Last set from Lua
+x  <C-Space>   *@<Lua 491: ~/.local/share/nvim/lazy/nvim-treesitter/lua/nvim-treesitter/incremental_selection.lua:58>
+                 Increment selection to named node
+	Last set from Lua
+n  <Space>mÞ   * <Nop>
+	Last set from Lua
+x  <Space>mÞ   * <Nop>
+	Last set from Lua
+x  <Space>Þ    * <Nop>
+	Last set from Lua
+x  <Space>     * <Cmd>lua require("which-key").show(" ", {mode = "v", auto = true})<CR>
+	Last set from Lua
+n  <Space>l    * <Lua 425: ~/.config/nvim/lua/dot/plugins/linting.lua:21>
+                 Trigger linting for current file
+	Last set from Lua
+v  <Space>mp   * <Lua 421: ~/.config/nvim/lua/dot/plugins/formatting.lua:25>
+                 Format file or range (in visual mode)
+	Last set from Lua
+n  <Space>mp   * <Lua 382: ~/.config/nvim/lua/dot/plugins/formatting.lua:25>
+                 Format file or range (in visual mode)
+	Last set from Lua
+n  <Space>xÞ   * <Nop>
+	Last set from Lua
+n  <Space>fÞ   * <Nop>
+	Last set from Lua
+n  <Space>lÞ   * <Nop>
+	Last set from Lua
+n  <Space>nÞ   * <Nop>
+	Last set from Lua
+n  <Space>sÞ   * <Nop>
+	Last set from Lua
+n  <Space>wÞ   * <Nop>
+	Last set from Lua
+n  <Space>tÞ   * <Nop>
+	Last set from Lua
+n  <Space>eÞ   * <Nop>
+	Last set from Lua
+n  <Space>Þ    * <Nop>
+	Last set from Lua
+n  <Space>     * <Cmd>lua require("which-key").show(" ", {mode = "n", auto = true})<CR>
+	Last set from Lua
+n  <Space>er   * <Cmd>NvimTreeRefresh<CR>
+                 Refresh file explorer
+	Last set from Lua
+n  <Space>ec   * <Cmd>NvimTreeCollapse<CR>
+                 Collapse file explorer
+	Last set from Lua
+n  <Space>ef   * <Cmd>NvimTreeFindFileToggle<CR>
+                 Toggle file explorer on current file
+	Last set from Lua
+n  <Space>ee   * <Cmd>NvimTreeToggle<CR>
+                 Toggle file explorer
+	Last set from Lua
+n  <Space>ws   * <Cmd>SessionSave<CR>
+                 Save session for aut session root dir
+	Last set from Lua
+n  <Space>wo   * <Cmd>SessionRestore<CR>
+                 Restore session for PWD
+	Last set from Lua
+n  <Space>ft   * <Cmd>TodoTelescope<CR>
+                 Find todos
+	Last set from Lua
+n  <Space>fc   * <Cmd>Telescope grep_string<CR>
+                 Fuzzy find under cursor in PWD
+	Last set from Lua
+n  <Space>fs   * <Cmd>Telescope live_grep<CR>
+                 Fuzzy string in PWD
+	Last set from Lua
+n  <Space>fr   * <Cmd>Telescope oldfiles<CR>
+                 Fuzzy find recent files
+	Last set from Lua
+n  <Space>ff   * <Cmd>Telescope find_files<CR>
+                 Fuzzy find files in PWD
+	Last set from Lua
+n  <Space>lg   * <Lua 18: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+                 Open lazy git
+	Last set from Lua
+n  <Space>sm   * <Lua 17: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+                 Maximize/minimize a split
+	Last set from Lua
+n  <Space>xq   * <Lua 16: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+                 Open trouble quickfix list
+	Last set from Lua
+n  <Space>xd   * <Lua 15: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+                 Open trouble document diagnostics
+	Last set from Lua
+n  <Space>xw   * <Lua 14: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+                 Open trouble workspace diagnostics
+	Last set from Lua
+n  <Space>xx   * <Lua 13: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+                 Open/close trouble list
+	Last set from Lua
+n  <Space>xt   * <Lua 10: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+                 Open todos in trouble
+	Last set from Lua
+n  <Space>xl   * <Lua 9: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+                 Open trouble location list
+	Last set from Lua
+n  <Space>tf   * <Cmd>tabnew %<CR>
+                 Open current buffer in new tab
+	Last set from Lua
+n  <Space>tp   * <Cmd>tabp<CR>
+                 Previous Tab
+	Last set from Lua
+n  <Space>tn   * <Cmd>tabn<CR>
+                 Next Tab
+	Last set from Lua
+n  <Space>tx   * <Cmd>tabclose<CR>
+                 Close current tab
+	Last set from Lua
+n  <Space>to   * <Cmd>tabnew<CR>
+                 Open new tab
+	Last set from Lua
+n  <Space>sx   * <Cmd>close<CR>
+                 Close current split
+	Last set from Lua
+n  <Space>se   * <C-W>=
+                 Make splits equal size
+	Last set from Lua
+n  <Space>sh   * <C-W>s
+                 Split window horizontally
+	Last set from Lua
+n  <Space>sv   * <C-W>v
+                 Split window vertically
+	Last set from Lua
+n  <Space>-    * <C-X>
+                 Decrement number
+	Last set from Lua
+n  <Space>+    * <C-A>
+                 Increment number
+	Last set from Lua
+n  <Space>nh   * :nohl<CR>
+                 Clear search highlights
+	Last set from Lua
+n  !iÞ         * <Nop>
+	Last set from Lua
+n  !aÞ         * <Nop>
+	Last set from Lua
+n  !Þ          * <Nop>
+	Last set from Lua
+n  !           * <Cmd>lua require("which-key").show("!", {mode = "n", auto = true})<CR>
+	Last set from Lua
+n  "           * <Cmd>lua require("which-key").show("\"", {mode = "n", auto = true})<CR>
+	Last set from Lua
+x  "           * <Cmd>lua require("which-key").show("\"", {mode = "v", auto = true})<CR>
+	Last set from Lua
+x  #           * y?\V<C-R>"<CR>
+                 Nvim builtin
+	Last set from Lua
+o  %             <Plug>(MatchitOperationForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 73
+x  %             <Plug>(MatchitVisualForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 71
+n  %             <Plug>(MatchitNormalForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 69
+n  &           * :&&<CR>
+                 Nvim builtin
+	Last set from Lua
+n  '           * <Cmd>lua require("which-key").show("'", {mode = "n", auto = true})<CR>
+	Last set from Lua
+x  *           * y/\V<C-R>"<CR>
+                 Nvim builtin
+	Last set from Lua
+n  <iÞ         * <Nop>
+	Last set from Lua
+n  <aÞ         * <Nop>
+	Last set from Lua
+n  <Þ          * <Nop>
+	Last set from Lua
+n  <           * <Cmd>lua require("which-key").show("<", {mode = "n", auto = true})<CR>
+	Last set from Lua
+n  >iÞ         * <Nop>
+	Last set from Lua
+n  >aÞ         * <Nop>
+	Last set from Lua
+n  >Þ          * <Nop>
+	Last set from Lua
+n  >           * <Cmd>lua require("which-key").show(">", {mode = "n", auto = true})<CR>
+	Last set from Lua
+x  S           * <Plug>(nvim-surround-visual)
+                 Add a surrounding pair around a visual selection
+	Last set from Lua
+n  S           * <Lua 445: ~/.local/share/nvim/lazy/substitute.nvim/lua/substitute.lua:92>
+                 Substitute to end of line
+	Last set from Lua
+n  Y           * y$
+                 Nvim builtin
+	Last set from Lua
+n  [Þ          * <Nop>
+	Last set from Lua
+n  [           * <Cmd>lua require("which-key").show("[", {mode = "n", auto = true})<CR>
+	Last set from Lua
+x  [Þ          * <Nop>
+	Last set from Lua
+x  [           * <Cmd>lua require("which-key").show("[", {mode = "v", auto = true})<CR>
+	Last set from Lua
+o  [%            <Plug>(MatchitOperationMultiBackward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 81
+x  [%            <Plug>(MatchitVisualMultiBackward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 79
+n  [%            <Plug>(MatchitNormalMultiBackward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 77
+n  [t          * <Lua 60: ~/.config/nvim/lua/dot/plugins/todo-comments.lua:13>
+                 Previous todo comment
+	Last set from Lua
+n  ]Þ          * <Nop>
+	Last set from Lua
+n  ]           * <Cmd>lua require("which-key").show("]", {mode = "n", auto = true})<CR>
+	Last set from Lua
+x  ]Þ          * <Nop>
+	Last set from Lua
+x  ]           * <Cmd>lua require("which-key").show("]", {mode = "v", auto = true})<CR>
+	Last set from Lua
+o  ]%            <Plug>(MatchitOperationMultiForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 82
+x  ]%            <Plug>(MatchitVisualMultiForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 80
+n  ]%            <Plug>(MatchitNormalMultiForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 78
+n  ]t          * <Lua 59: ~/.config/nvim/lua/dot/plugins/todo-comments.lua:10>
+                 Next todo comment
+	Last set from Lua
+n  `           * <Cmd>lua require("which-key").show("`", {mode = "n", auto = true})<CR>
+	Last set from Lua
+x  a%            <Plug>(MatchitVisualTextObject)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 85
+n  cS          * <Plug>(nvim-surround-change-line)
+                 Change a surrounding pair, putting replacements on new lines
+	Last set from Lua
+n  cs          * <Plug>(nvim-surround-change)
+                 Change a surrounding pair
+	Last set from Lua
+n  ciÞ         * <Nop>
+	Last set from Lua
+n  caÞ         * <Nop>
+	Last set from Lua
+n  cÞ          * <Nop>
+	Last set from Lua
+n  c           * <Cmd>lua require("which-key").show("c", {mode = "n", auto = true})<CR>
+	Last set from Lua
+n  ds          * <Plug>(nvim-surround-delete)
+                 Delete a surrounding pair
+	Last set from Lua
+n  diÞ         * <Nop>
+	Last set from Lua
+n  daÞ         * <Nop>
+	Last set from Lua
+n  dÞ          * <Nop>
+	Last set from Lua
+n  d           * <Cmd>lua require("which-key").show("d", {mode = "n", auto = true})<CR>
+	Last set from Lua
+n  gcA         * <Lua 469: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/api.lua:218>
+                 Comment insert end of line
+	Last set from Lua
+n  gcO         * <Lua 468: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/api.lua:179>
+                 Comment insert above
+	Last set from Lua
+n  gco         * <Lua 467: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/api.lua:182>
+                 Comment insert below
+	Last set from Lua
+x  gb          * <Plug>(comment_toggle_blockwise_visual)
+                 Comment toggle blockwise (visual)
+	Last set from Lua
+x  gc          * <Plug>(comment_toggle_linewise_visual)
+                 Comment toggle linewise (visual)
+	Last set from Lua
+n  gbc         * <Lua 466: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/init.lua:107>
+                 Comment toggle current block
+	Last set from Lua
+n  gcc         * <Lua 465: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/init.lua:103>
+                 Comment toggle current line
+	Last set from Lua
+n  gb          * <Plug>(comment_toggle_blockwise)
+                 Comment toggle blockwise
+	Last set from Lua
+n  gc          * <Plug>(comment_toggle_linewise)
+                 Comment toggle linewise
+	Last set from Lua
+x  gS          * <Plug>(nvim-surround-visual-line)
+                 Add a surrounding pair around a visual selection, on new lines
+	Last set from Lua
+n  guiÞ        * <Nop>
+	Last set from Lua
+n  guaÞ        * <Nop>
+	Last set from Lua
+n  guÞ         * <Nop>
+	Last set from Lua
+n  gUiÞ        * <Nop>
+	Last set from Lua
+n  gUaÞ        * <Nop>
+	Last set from Lua
+n  gUÞ         * <Nop>
+	Last set from Lua
+n  g~iÞ        * <Nop>
+	Last set from Lua
+n  g~aÞ        * <Nop>
+	Last set from Lua
+n  g~Þ         * <Nop>
+	Last set from Lua
+n  gÞ          * <Nop>
+	Last set from Lua
+n  g           * <Cmd>lua require("which-key").show("g", {mode = "n", auto = true})<CR>
+	Last set from Lua
+x  gÞ          * <Nop>
+	Last set from Lua
+x  g           * <Cmd>lua require("which-key").show("g", {mode = "v", auto = true})<CR>
+	Last set from Lua
+o  g%            <Plug>(MatchitOperationBackward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 74
+x  g%            <Plug>(MatchitVisualBackward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 72
+n  g%            <Plug>(MatchitNormalBackward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 70
+x  s           * <Lua 444: ~/.local/share/nvim/lazy/substitute.nvim/lua/substitute.lua:102>
+                 Substitute in visual mode
+	Last set from Lua
+n  ss          * <Lua 462: ~/.local/share/nvim/lazy/substitute.nvim/lua/substitute.lua:81>
+                 Substitute line
+	Last set from Lua
+n  s           * <Lua 453: ~/.local/share/nvim/lazy/substitute.nvim/lua/substitute.lua:25>
+                 Substitute with motion
+	Last set from Lua
+n  viÞ         * <Nop>
+	Last set from Lua
+n  vaÞ         * <Nop>
+	Last set from Lua
+n  vÞ          * <Nop>
+	Last set from Lua
+n  v           * <Cmd>lua require("which-key").show("v", {mode = "n", auto = true})<CR>
+	Last set from Lua
+n  ySS         * <Plug>(nvim-surround-normal-cur-line)
+                 Add a surrounding pair around the current line, on new lines (normal mode)
+	Last set from Lua
+n  yS          * <Plug>(nvim-surround-normal-line)
+                 Add a surrounding pair around a motion, on new lines (normal mode)
+	Last set from Lua
+n  yss         * <Plug>(nvim-surround-normal-cur)
+                 Add a surrounding pair around the current line (normal mode)
+	Last set from Lua
+n  ys          * <Plug>(nvim-surround-normal)
+                 Add a surrounding pair around a motion (normal mode)
+	Last set from Lua
+n  yiÞ         * <Nop>
+	Last set from Lua
+n  yaÞ         * <Nop>
+	Last set from Lua
+n  yÞ          * <Nop>
+	Last set from Lua
+n  y           * <Cmd>lua require("which-key").show("y", {mode = "n", auto = true})<CR>
+	Last set from Lua
+n  zfiÞ        * <Nop>
+	Last set from Lua
+n  zfaÞ        * <Nop>
+	Last set from Lua
+n  zfÞ         * <Nop>
+	Last set from Lua
+n  zÞ          * <Nop>
+	Last set from Lua
+n  z           * <Cmd>lua require("which-key").show("z", {mode = "n", auto = true})<CR>
+	Last set from Lua
+s  <Plug>luasnip-jump-prev * <Lua 521: ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua:57>
+	Last set from Lua
+s  <Plug>luasnip-jump-next * <Lua 464: ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua:54>
+	Last set from Lua
+s  <Plug>luasnip-prev-choice * <Lua 463: ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua:51>
+	Last set from Lua
+s  <Plug>luasnip-next-choice * <Lua 457: ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua:48>
+	Last set from Lua
+s  <Plug>luasnip-expand-snippet * <Lua 387: ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua:45>
+	Last set from Lua
+s  <Plug>luasnip-expand-or-jump * <Lua 427: ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua:42>
+	Last set from Lua
+   <Plug>luasnip-expand-repeat * <Lua 418: ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua:35>
+	Last set from Lua
+n  <Plug>luasnip-delete-check * <Lua 4: ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua:28>
+	Last set from Lua
+x  <Plug>(comment_toggle_blockwise_visual) * <Esc><Cmd>lua require("Comment.api").locked("toggle.blockwise")(vim.fn.visualmode())<CR>
+                 Comment toggle blockwise (visual)
+	Last set from Lua
+x  <Plug>(comment_toggle_linewise_visual) * <Esc><Cmd>lua require("Comment.api").locked("toggle.linewise")(vim.fn.visualmode())<CR>
+                 Comment toggle linewise (visual)
+	Last set from Lua
+n  <Plug>(comment_toggle_blockwise_count) * <Lua 452: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/api.lua:246>
+                 Comment toggle blockwise with count
+	Last set from Lua
+n  <Plug>(comment_toggle_linewise_count) * <Lua 451: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/api.lua:246>
+                 Comment toggle linewise with count
+	Last set from Lua
+n  <Plug>(comment_toggle_blockwise_current) * <Lua 322: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/api.lua:246>
+                 Comment toggle current block
+	Last set from Lua
+n  <Plug>(comment_toggle_linewise_current) * <Lua 367: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/api.lua:246>
+                 Comment toggle current line
+	Last set from Lua
+n  <Plug>(comment_toggle_blockwise) * <Lua 313: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/api.lua:246>
+                 Comment toggle blockwise
+	Last set from Lua
+n  <Plug>(comment_toggle_linewise) * <Lua 323: ~/.local/share/nvim/lazy/Comment.nvim/lua/Comment/api.lua:246>
+                 Comment toggle linewise
+	Last set from Lua
+n  <Plug>(nvim-surround-change-line) * <Lua 343: ~/.local/share/nvim/lazy/nvim-surround/lua/nvim-surround/config.lua:740>
+                 Change a surrounding pair, putting replacements on new lines
+	Last set from Lua
+n  <Plug>(nvim-surround-change) * <Lua 407: ~/.local/share/nvim/lazy/nvim-surround/lua/nvim-surround/config.lua:727>
+                 Change a surrounding pair
+	Last set from Lua
+n  <Plug>(nvim-surround-delete) * <Lua 389: ~/.local/share/nvim/lazy/nvim-surround/lua/nvim-surround/init.lua:150>
+                 Delete a surrounding pair
+	Last set from Lua
+x  <Plug>(nvim-surround-visual-line) * <Lua 443: ~/.local/share/nvim/lazy/nvim-surround/lua/nvim-surround/config.lua:698>
+                 Add a surrounding pair around a visual selection, on new lines
+	Last set from Lua
+x  <Plug>(nvim-surround-visual) * <Lua 374: ~/.local/share/nvim/lazy/nvim-surround/lua/nvim-surround/config.lua:680>
+                 Add a surrounding pair around a visual selection
+	Last set from Lua
+n  <Plug>(nvim-surround-normal-cur-line) * <Lua 458: ~/.local/share/nvim/lazy/nvim-surround/lua/nvim-surround/config.lua:667>
+                 Add a surrounding pair around the current line, on new lines (normal mode)
+	Last set from Lua
+n  <Plug>(nvim-surround-normal-line) * <Lua 460: ~/.local/share/nvim/lazy/nvim-surround/lua/nvim-surround/config.lua:654>
+                 Add a surrounding pair around a motion, on new lines (normal mode)
+	Last set from Lua
+n  <Plug>(nvim-surround-normal-cur) * <Lua 461: ~/.local/share/nvim/lazy/nvim-surround/lua/nvim-surround/config.lua:641>
+                 Add a surrounding pair around the current line (normal mode)
+	Last set from Lua
+n  <Plug>(nvim-surround-normal) * <Lua 424: ~/.local/share/nvim/lazy/nvim-surround/lua/nvim-surround/config.lua:628>
+                 Add a surrounding pair around a motion (normal mode)
+	Last set from Lua
+n  <C-W>Þ      * <Nop>
+	Last set from Lua
+n  <C-W>       * <Cmd>lua require("which-key").show("\23", {mode = "n", auto = true})<CR>
+	Last set from Lua
+x  <Plug>(MatchitVisualTextObject)   <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 66
+o  <Plug>(MatchitOperationMultiForward) * :<C-U>call matchit#MultiMatch("W",  "o")<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 63
+o  <Plug>(MatchitOperationMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "o")<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 62
+x  <Plug>(MatchitVisualMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>m'gv``
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 61
+x  <Plug>(MatchitVisualMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>m'gv``
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 60
+n  <Plug>(MatchitNormalMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 59
+n  <Plug>(MatchitNormalMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 58
+o  <Plug>(MatchitOperationBackward) * :<C-U>call matchit#Match_wrapper('',0,'o')<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 55
+o  <Plug>(MatchitOperationForward) * :<C-U>call matchit#Match_wrapper('',1,'o')<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 54
+x  <Plug>(MatchitVisualBackward) * :<C-U>call matchit#Match_wrapper('',0,'v')<CR>m'gv``
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 53
+x  <Plug>(MatchitVisualForward) * :<C-U>call matchit#Match_wrapper('',1,'v')<CR>:if col("''") != col("$") | exe ":normal! m'" | endif<CR>gv``
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 51
+n  <Plug>(MatchitNormalBackward) * :<C-U>call matchit#Match_wrapper('',0,'n')<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 50
+n  <Plug>(MatchitNormalForward) * :<C-U>call matchit#Match_wrapper('',1,'n')<CR>
+	Last set from /opt/homebrew/Cellar/neovim/0.9.5/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 49
+n  <Plug>PlenaryTestFile * :lua require('plenary.test_harness').test_file(vim.fn.expand("%:p"))<CR>
+	Last set from ~/.local/share/nvim/lazy/plenary.nvim/plugin/plenary.vim line 9
+   <C-Bslash>  * :<C-U>TmuxNavigatePrevious<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-tmux-navigator/plugin/tmux_navigator.vim line 23
+   <C-K>       * :<C-U>TmuxNavigateUp<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-tmux-navigator/plugin/tmux_navigator.vim line 21
+   <C-J>       * :<C-U>TmuxNavigateDown<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-tmux-navigator/plugin/tmux_navigator.vim line 20
+   <C-H>       * :<C-U>TmuxNavigateLeft<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-tmux-navigator/plugin/tmux_navigator.vim line 19
+   <C-L>       * :<C-U>TmuxNavigateRight<CR>
+	Last set from ~/.local/share/nvim/lazy/vim-tmux-navigator/plugin/tmux_navigator.vim line 22
