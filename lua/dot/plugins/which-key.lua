@@ -44,6 +44,7 @@ return {
 			{ "<leader>njg", "<cmd>Neorg workspace general <CR><cmd> Neorg journal today<cr>", desc = "General" },
 		})
 		-- Add the key mappings only for Markdown files in a zk notebook.
+		-- TODO: move to which-key.add
 		if require("zk.util").notebook_root(vim.fn.expand("%:p")) ~= nil then
 			local function map(...)
 				vim.api.nvim_buf_set_keymap(0, ...)
