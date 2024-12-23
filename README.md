@@ -2,7 +2,15 @@
 
 ## 2024-12-23 12:22
 
-My (Dot's) Neovim setup based on [Josean](https://github.com/josean-dev)'s setup.
+My (Dot's) Neovim setup based on [Josean's](https://github.com/josean-dev) setup.
 
-- [LazyVim](https://www.lazyvim.org)
-- [Which-Key](https://github.com/folke/which-key)
+My differences:
+
+- Avante
+- Conjure
+- Fzf
+- Vimslime
+- TeX
+- Lilypond
+- Arduino
+- Zk
