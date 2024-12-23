@@ -14,3 +14,4 @@ My differences:
 - Lilypond
 - Arduino
 - Zk
+- Neorg
