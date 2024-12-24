@@ -15,3 +15,4 @@ My differences:
 - Arduino
 - Zk
 - Neorg
+- SuperCollider
