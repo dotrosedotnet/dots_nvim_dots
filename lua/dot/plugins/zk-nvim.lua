@@ -23,5 +23,13 @@ return {
 				},
 			},
 		})
+
+		vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+			pattern = { "/home/dot/.local/share/zk/*.md" },
+			callback = function()
+				vim.cmd("$")
+				vim.cmd("startinsert")
+			end,
+		})
 	end,
 }
