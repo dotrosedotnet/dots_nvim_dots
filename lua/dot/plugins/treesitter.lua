@@ -28,6 +28,7 @@ return {
 				"csv",
 				"diff",
 				"dockerfile",
+				"forth",
 				"git_config",
 				"gitcommit",
 				"gitignore",
