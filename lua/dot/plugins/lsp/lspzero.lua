@@ -46,5 +46,6 @@ return {
 		require("lspconfig").jsonls.setup({})
 		require("lspconfig").bashls.setup({})
 		require("lspconfig").jdtls.setup({})
+		require("lspconfig").hls.setup({})
 	end,
 }
