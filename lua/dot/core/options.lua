@@ -19,8 +19,8 @@ opt.smartcase = true --mixed case -> sen
 
 opt.cursorline = true
 
-opt.termguicolors = true
-opt.background = "dark"
+opt.termguicolors = false
+-- opt.background = "dark"
 opt.signcolumn = "yes"
 
 opt.backspace = "indent,eol,start"

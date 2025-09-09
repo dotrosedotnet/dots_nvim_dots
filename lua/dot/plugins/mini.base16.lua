@@ -1,0 +1,1 @@
+/nix/store/3rsywlfln5rkvfh50mhrpgjsz22knv1i-home-manager-files/.config/nvim/lua/dot/plugins/mini.base16.lua
