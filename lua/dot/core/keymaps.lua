@@ -72,29 +72,3 @@ keymap.set("n", "<leader>rc", reload_colorscheme, { desc = "Reload colorscheme" 
 vim.api.nvim_create_user_command("ReloadColorscheme", reload_colorscheme, {
 	desc = "Reload miniBase16 colorscheme",
 })
-
--- Reload bufferline function
-local function reload_bufferline()
-	local ok, err = pcall(function()
-		-- Clear any cached configuration
-		package.loaded["dot.plugins.bufferline"] = nil
-		
-		-- Re-run the config function from our bufferline setup
-		local bufferline_config = require("dot.plugins.bufferline")
-		if bufferline_config.config then
-			bufferline_config.config()
-		end
-	end)
-	
-	if ok then
-		print("✓ Bufferline reloaded with custom highlights")
-	else
-		print("✗ Error reloading bufferline: " .. tostring(err))
-	end
-end
-
--- Make function globally accessible
-_G.reload_bufferline = reload_bufferline
-
--- Bufferline reload keymap
-keymap.set("n", "<leader>rb", reload_bufferline, { desc = "Reload bufferline" })
