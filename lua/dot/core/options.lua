@@ -19,8 +19,8 @@ opt.smartcase = true --mixed case -> sen
 
 opt.cursorline = true
 
-opt.termguicolors = false
--- opt.background = "dark"
+opt.termguicolors = true
+opt.background = "dark"
 opt.signcolumn = "yes"
 
 opt.backspace = "indent,eol,start"
@@ -32,4 +32,18 @@ opt.splitbelow = true
 
 opt.conceallevel = 3
 
--- opt.textwidth = 80
+opt.textwidth = 80
+
+-- auto-reload colorscheme on startup
+-- DISABLED: This causes duplicate color loading since mini.base16 already loads on startup
+-- vim.api.nvim_create_autocmd("VimEnter", {
+-- 	callback = function()
+-- 		-- small delay to ensure all plugins are loaded
+-- 		vim.defer_fn(function()
+-- 			if _G.reload_colorscheme then
+-- 				_G.reload_colorscheme()
+-- 			end
+-- 		end, 100)
+-- 	end,
+-- 	desc = "Auto-reload colorscheme on startup",
+-- })
