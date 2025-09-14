@@ -48,18 +48,18 @@ return {
 			tail = { bg = colors.base02, fg = colors.base05 }, -- End section
 		}
 
-		-- Setup tabby with custom line renderer
+		-- Setup tabby with custom line renderer and rounded separators
 		require("tabby").setup({
 			line = function(line)
 				return {
 					{
 						{ "  ", hl = theme.head },
-						line.sep("", theme.head, theme.fill),
+						line.sep("", theme.head, theme.fill),
 					},
 					line.tabs().foreach(function(tab)
 						local hl = tab.is_current() and theme.current_tab or theme.tab
 						return {
-							line.sep("", hl, theme.fill),
+							line.sep("", hl, theme.fill),
 							tab.is_current() and "" or "",
 							" ",
 							tab.number(),
@@ -67,14 +67,14 @@ return {
 							tab.name(),
 							" ",
 							tab.close_btn(""),
-							line.sep("", hl, theme.fill),
+							line.sep("", hl, theme.fill),
 							hl = hl,
 							margin = " ",
 						}
 					end),
 					line.spacer(),
 					{
-						line.sep("", theme.tail, theme.fill),
+						line.sep("", theme.tail, theme.fill),
 						{ "  ", hl = theme.tail },
 					},
 					hl = theme.fill,
