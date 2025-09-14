@@ -43,8 +43,8 @@ return {
 		local theme = {
 			fill = { bg = colors.base02, fg = colors.base04 }, -- Background fill
 			head = { bg = colors.base02, fg = colors.base07 }, -- Start section
-			current_tab = { bg = colors.base01, fg = colors.base06, style = "bold" }, -- Active tab
-			tab = { bg = colors.base04, fg = colors.base01 }, -- Inactive tabs
+			current_tab = { bg = colors.base01, fg = colors.base0E, style = "bold" }, -- Active tab
+			tab = { bg = colors.base00, fg = colors.base03 }, -- Inactive tabs
 			win = { bg = colors.base02, fg = colors.base04 }, -- Windows
 			tail = { bg = colors.base02, fg = colors.base05 }, -- End section
 		}
