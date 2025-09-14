@@ -5,6 +5,7 @@ return {
 		-- Load the miniBase16 configuration to get the current colors
 		local config_path = vim.fn.stdpath("config") .. "/lua/dot/plugins/miniBase16.lua"
 		local colors = {}
+		local devicons = require("nvim-web-devicons")
 
 		-- Try to load colors from miniBase16
 		local ok, err = pcall(function()
@@ -58,12 +59,15 @@ return {
 					},
 					line.tabs().foreach(function(tab)
 						local hl = tab.is_current() and theme.current_tab or theme.tab
+						local win = tab.current_win()
+						local buf = win and win.buf()
 						return {
 							line.sep("", hl, theme.fill),
 							tab.is_current() and "" or "",
 							" ",
 							tab.number(),
 							": ",
+							buf and buf.file_icon() or "",
 							tab.name(),
 							" ",
 							tab.close_btn(""),
