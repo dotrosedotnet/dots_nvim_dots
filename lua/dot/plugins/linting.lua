@@ -14,7 +14,7 @@ return {
 			bash = { "shellcheck" },
 			zsh = { "shellcheck" },
 			dockerfile = { "hadolint" },
-			markdown = { "markdownlint" },
+			markdown = { "markdownlint-cli2" },
 			json = { "jsonlint" },
 			yaml = { "yamllint" },
 			lua = { "luacheck" },
