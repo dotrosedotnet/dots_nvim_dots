@@ -1,1 +1,0 @@
-/nix/store/0i2fmfl8339kjg612s0xlqxivingrgdv-home-manager-files/.config/nvim/lua/dot/plugins/stylix-reload.lua
