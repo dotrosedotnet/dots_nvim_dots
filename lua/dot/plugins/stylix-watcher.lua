@@ -1,1 +1,1 @@
-/nix/store/z5jrg5zs21c81k49kpbjf47gx7iinymv-home-manager-files/.config/nvim/lua/dot/plugins/stylix-watcher.lua
+/nix/store/0i2fmfl8339kjg612s0xlqxivingrgdv-home-manager-files/.config/nvim/lua/dot/plugins/stylix-watcher.lua
