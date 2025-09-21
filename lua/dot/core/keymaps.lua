@@ -39,36 +39,6 @@ keymap.set("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = { v
 keymap.set("v", "<leader>zf", ":'<,'>ZkMatch<CR>", opts)
 
 -- colorscheme reload function
-local function reload_colorscheme()
-	local ok, err = pcall(function()
-		-- Clear the bytecode cache for miniBase16
-		local cache_pattern = vim.fn.expand("~/.cache/nvim/luac/*miniBase16*")
-		vim.fn.system("rm -f " .. cache_pattern .. " 2>/dev/null")
-		
-		-- Use dofile to load the config file directly since it has a dot in the filename
-		local config_path = vim.fn.stdpath("config") .. "/lua/dot/plugins/miniBase16.lua"
-		local config_module = dofile(config_path)
-		-- Check for opts (can be function or table) or config
-		local opts = config_module.opts or config_module.config or config_module
-		-- If opts is a function, call it to get the actual config
-		local config = type(opts) == "function" and opts() or opts
-		require("mini.base16").setup(config)
-	end)
-
-	if ok then
-		print("✓ miniBase16 reloaded successfully")
-	else
-		print("✗ Error reloading miniBase16: " .. tostring(err))
-	end
-end
-
--- make function globally accessible
-_G.reload_colorscheme = reload_colorscheme
-
--- colorscheme reload keymap and command
-keymap.set("n", "<leader>rc", reload_colorscheme, { desc = "Reload colorscheme" })
-
--- create user command
-vim.api.nvim_create_user_command("ReloadColorscheme", reload_colorscheme, {
-	desc = "Reload miniBase16 colorscheme",
-})
+-- MOVED TO NIXOS CONFIG: The reload command is now managed by tintedNvim.nix
+-- which generates ~/.config/nvim/lua/dot/plugins/tinted-reload.lua
+-- This ensures the reload command always matches the NixOS-managed colors

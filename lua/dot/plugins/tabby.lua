@@ -2,42 +2,42 @@ return {
 	"nanozuki/tabby.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		-- Load the miniBase16 configuration to get the current colors
-		local config_path = vim.fn.stdpath("config") .. "/lua/dot/plugins/miniBase16.lua"
-		local colors = {}
 		local devicons = require("nvim-web-devicons")
-
-		-- Try to load colors from miniBase16
-		local ok, err = pcall(function()
-			-- Use dofile to avoid module caching issues
-			local miniBase16Config = dofile(config_path)
-			-- Get the palette from the config (handle both function and table forms)
-			local opts = miniBase16Config.opts or miniBase16Config.config or miniBase16Config
-			local config = type(opts) == "function" and opts() or opts
-			colors = config.palette or {}
-		end)
-
-		-- Fallback colors if loading fails
-		if not ok or not next(colors) then
-			colors = {
-				base00 = "#322931", -- Default Background
-				base01 = "#322931", -- Lighter Background (status bars)
-				base02 = "#797379", -- Selection Background
-				base03 = "#898388", -- Comments, Invisibles
-				base04 = "#999498", -- Dark Foreground (status bars)
-				base05 = "#a9a4a8", -- Default Foreground
-				base06 = "#b9b5b8", -- Light Foreground
-				base07 = "#ffffff", -- Light Background
-				base08 = "#dd464c", -- Variables, XML Tags
-				base09 = "#fdcc59", -- Integers, Boolean
-				base0A = "#989498", -- Classes, Markup Bold
-				base0B = "#8fc13e", -- Strings, Inherited Class
-				base0C = "#149b93", -- Support, Regex
-				base0D = "#1290bf", -- Functions, Methods
-				base0E = "#c85e7c", -- Keywords, Storage
-				base0F = "#6e2326", -- Deprecated
+		
+		-- Create a function to get colors dynamically
+		local function get_colors()
+			-- Get colors from highlight groups set by Stylix
+			local function get_hl_color(group, attr)
+				local hl = vim.api.nvim_get_hl(0, { name = group })
+				if attr == "fg" then
+					return hl.fg and string.format("#%06x", hl.fg) or nil
+				elseif attr == "bg" then
+					return hl.bg and string.format("#%06x", hl.bg) or nil
+				end
+			end
+			
+			-- Extract colors from the highlight groups
+			return {
+				base00 = get_hl_color("Normal", "bg") or "#252a2f",
+				base01 = get_hl_color("CursorLine", "bg") or "#43474c",
+				base02 = get_hl_color("StatusLine", "bg") or "#616568",
+				base03 = get_hl_color("Comment", "fg") or "#7f8285",
+				base04 = get_hl_color("StatusLineNC", "fg") or "#9ea0a2",
+				base05 = get_hl_color("Normal", "fg") or "#bcbdc0",
+				base06 = get_hl_color("Normal", "fg") or "#dadadd",
+				base07 = get_hl_color("NormalFloat", "fg") or "#f7f8f8",
+				base08 = get_hl_color("Error", "fg") or "#ed5d86",
+				base09 = get_hl_color("Number", "fg") or "#f59762",
+				base0A = get_hl_color("Type", "fg") or "#eb824d",
+				base0B = get_hl_color("String", "fg") or "#20c290",
+				base0C = get_hl_color("Special", "fg") or "#02efef",
+				base0D = get_hl_color("Function", "fg") or "#4080d0",
+				base0E = get_hl_color("Keyword", "fg") or "#a070d0",
+				base0F = get_hl_color("Delimiter", "fg") or "#eb0000",
 			}
 		end
+		
+		local colors = get_colors()
 
 		-- Define tabby theme using base16 colors
 		local theme = {
@@ -88,5 +88,25 @@ return {
 
 		-- Ensure tabline is always visible
 		vim.o.showtabline = 2
+		
+		-- Refresh tabby when colorscheme changes
+		vim.api.nvim_create_autocmd("ColorScheme", {
+			callback = function()
+				-- Get updated colors
+				local new_colors = get_colors()
+				
+				-- Update theme with new colors
+				theme.fill = { bg = new_colors.base02, fg = new_colors.base04 }
+				theme.head = { bg = new_colors.base02, fg = new_colors.base07 }
+				theme.current_tab = { bg = new_colors.base01, fg = new_colors.base0E, style = "bold" }
+				theme.tab = { bg = new_colors.base00, fg = new_colors.base03 }
+				theme.win = { bg = new_colors.base02, fg = new_colors.base04 }
+				theme.tail = { bg = new_colors.base02, fg = new_colors.base05 }
+				
+				-- Force redraw of tabline
+				vim.cmd("redrawtabline")
+			end,
+			desc = "Update tabby colors when colorscheme changes"
+		})
 	end,
 }
