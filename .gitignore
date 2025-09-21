@@ -1,3 +1,7 @@
 lazy-lock.json
 lazy-lock.json
 lua/dot/plugins/miniBase16.lua
+lua/dot/plugins/stylix-reload.lua
+lua/dot/plugins/stylix-watcher.lua
+lua/dot/plugins/stylixColors.lua
+lua/dot/plugins/stylixColors.lua
