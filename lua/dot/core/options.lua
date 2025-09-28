@@ -1,5 +1,8 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
+-- Disable Neovim's markdown recommended style (which sets tabstop=4)
+vim.g.markdown_recommended_style = 0
+
 local opt = vim.opt
 
 opt.relativenumber = true
