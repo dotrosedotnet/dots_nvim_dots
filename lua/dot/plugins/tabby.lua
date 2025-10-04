@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local devicons = require("nvim-web-devicons")
-		
+
 		-- Create a function to get colors dynamically
 		local function get_colors()
 			-- Get colors from highlight groups set by Stylix
@@ -15,7 +15,7 @@ return {
 					return hl.bg and string.format("#%06x", hl.bg) or nil
 				end
 			end
-			
+
 			-- Extract colors from the highlight groups
 			return {
 				base00 = get_hl_color("Normal", "bg") or "#252a2f",
@@ -36,27 +36,27 @@ return {
 				base0F = get_hl_color("Delimiter", "fg") or "#eb0000",
 			}
 		end
-		
-		local colors = get_colors()
 
-		-- Define tabby theme using base16 colors
-		local theme = {
-			fill = { bg = colors.base02, fg = colors.base04 }, -- Background fill
-			head = { bg = colors.base02, fg = colors.base07 }, -- Start section
-			current_tab = { bg = colors.base01, fg = colors.base0E, style = "bold" }, -- Active tab
-			tab = { bg = colors.base00, fg = colors.base03 }, -- Inactive tabs
-			win = { bg = colors.base02, fg = colors.base04 }, -- Windows
-			tail = { bg = colors.base02, fg = colors.base05 }, -- End section
-		}
+		-- Create theme from colors
+		local function build_theme(colors)
+			return {
+				fill = { bg = colors.base02, fg = colors.base09 }, -- Background fill
+				head = { bg = colors.base02, fg = colors.base07 }, -- Start section
+				current_tab = { bg = colors.base03, fg = colors.base0C, style = "bold" }, -- Active tab
+				tab = { bg = colors.base00, fg = colors.base03 }, -- Inactive tabs
+				win = { bg = colors.base02, fg = colors.base05 }, -- Windows
+				tail = { bg = colors.base02, fg = colors.base05 }, -- End section
+			}
+		end
+
+		local colors = get_colors()
+		local theme = build_theme(colors)
 
 		-- Setup tabby with custom line renderer and rounded separators
 		require("tabby").setup({
 			line = function(line)
 				return {
-					{
-						{ "  ", hl = theme.head },
-						line.sep("", theme.head, theme.fill),
-					},
+					{ "  ", hl = theme.head },
 					line.tabs().foreach(function(tab)
 						local hl = tab.is_current() and theme.current_tab or theme.tab
 						local win = tab.current_win()
@@ -77,10 +77,7 @@ return {
 						}
 					end),
 					line.spacer(),
-					{
-						line.sep("", theme.tail, theme.fill),
-						{ "  ", hl = theme.tail },
-					},
+					{ "  ", hl = theme.tail },
 					hl = theme.fill,
 				}
 			end,
@@ -88,25 +85,18 @@ return {
 
 		-- Ensure tabline is always visible
 		vim.o.showtabline = 2
-		
+
 		-- Refresh tabby when colorscheme changes
 		vim.api.nvim_create_autocmd("ColorScheme", {
 			callback = function()
-				-- Get updated colors
+				-- Get updated colors and rebuild theme
 				local new_colors = get_colors()
-				
-				-- Update theme with new colors
-				theme.fill = { bg = new_colors.base02, fg = new_colors.base04 }
-				theme.head = { bg = new_colors.base02, fg = new_colors.base07 }
-				theme.current_tab = { bg = new_colors.base01, fg = new_colors.base0E, style = "bold" }
-				theme.tab = { bg = new_colors.base00, fg = new_colors.base03 }
-				theme.win = { bg = new_colors.base02, fg = new_colors.base04 }
-				theme.tail = { bg = new_colors.base02, fg = new_colors.base05 }
-				
+				theme = build_theme(new_colors)
+
 				-- Force redraw of tabline
 				vim.cmd("redrawtabline")
 			end,
-			desc = "Update tabby colors when colorscheme changes"
+			desc = "Update tabby colors when colorscheme changes",
 		})
 	end,
 }
