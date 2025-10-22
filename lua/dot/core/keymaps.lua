@@ -38,6 +38,42 @@ keymap.set("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = { v
 -- Search for the notes matching the current visual selection.
 keymap.set("v", "<leader>zf", ":'<,'>ZkMatch<CR>", opts)
 
+-- diagnostics
+keymap.set("n", "<leader>yd", function()
+	local cursor_pos = vim.api.nvim_win_get_cursor(0)
+	local line_num = cursor_pos[1] - 1 -- Convert to 0-indexed
+	local diagnostics = vim.diagnostic.get(0, { lnum = line_num })
+
+	if #diagnostics == 0 then
+		vim.notify("No diagnostics on current line", vim.log.levels.INFO)
+		return
+	end
+
+	local severity_map = {
+		[vim.diagnostic.severity.ERROR] = "ERROR",
+		[vim.diagnostic.severity.WARN] = "WARN",
+		[vim.diagnostic.severity.INFO] = "INFO",
+		[vim.diagnostic.severity.HINT] = "HINT",
+	}
+
+	local lines = {}
+	for _, diag in ipairs(diagnostics) do
+		local severity = severity_map[diag.severity] or "UNKNOWN"
+		local source = diag.source or ""
+		local text
+		if source ~= "" then
+			text = string.format("[%s:%s] %s", severity, source, diag.message)
+		else
+			text = string.format("[%s] %s", severity, diag.message)
+		end
+		table.insert(lines, text)
+	end
+
+	local content = table.concat(lines, "\n")
+	vim.fn.setreg("+", content)
+	vim.notify("Copied diagnostic(s) to clipboard", vim.log.levels.INFO)
+end, { desc = "Yank (copy) diagnostics on current line" })
+
 -- colorscheme reload function
 -- MOVED TO NIXOS CONFIG: The reload command is now managed by tintedNvim.nix
 -- which generates ~/.config/nvim/lua/dot/plugins/tinted-reload.lua
