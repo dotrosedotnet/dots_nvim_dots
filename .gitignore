@@ -5,3 +5,5 @@ lua/dot/plugins/stylix-reload.lua
 lua/dot/plugins/stylix-watcher.lua
 lua/dot/plugins/stylixColors.lua
 lua/dot/plugins/stylixColors.lua
+.lsp/.cache
+.clj-kondo/.cache/v1
