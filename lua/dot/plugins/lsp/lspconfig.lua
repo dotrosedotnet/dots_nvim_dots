@@ -12,7 +12,7 @@ return {
 
 		-- UI enhancements
 		require("dot.plugins.lsp.lsp-utils"), -- Trouble.nvim
-		require("dot.plugins.lsp.lsp-info"),  -- Fidget.nvim
+		require("dot.plugins.lsp.lsp-info"), -- Fidget.nvim
 	},
 	config = function()
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -155,13 +155,10 @@ return {
 						globals = { "vim" },
 					},
 					workspace = {
-						library = vim.list_extend(
-							vim.api.nvim_get_runtime_file("", true),
-							{
-								vim.fn.expand("$VIMRUNTIME/lua"),
-								vim.fn.stdpath("config") .. "/lua",
-							}
-						),
+						library = vim.list_extend(vim.api.nvim_get_runtime_file("", true), {
+							vim.fn.expand("$VIMRUNTIME/lua"),
+							vim.fn.stdpath("config") .. "/lua",
+						}),
 						checkThirdParty = false,
 					},
 					telemetry = {
