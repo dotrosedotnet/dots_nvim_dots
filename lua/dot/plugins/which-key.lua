@@ -37,11 +37,13 @@ return {
 			{ "<leader>nwf", "<cmd>Neorg workspace food<cr>", desc = "Food" },
 			{ "<leader>nwp", "<cmd>Neorg workspace practice<cr>", desc = "Practice" },
 			{ "<leader>nwg", "<cmd>Neorg workspace general<cr>", desc = "General" },
+			{ "<leader>nws", "<cmd>Neorg workspace school<cr>", desc = "School" },
 			{ "<leader>nj", name = "+Journal" },
 			{ "<leader>nje", "<cmd>Neorg workspace exercise <CR><cmd> Neorg journal today<cr>", desc = "Exercise" },
 			{ "<leader>njf", "<cmd>Neorg workspace food <CR><cmd> Neorg journal today<cr>", desc = "Food" },
 			{ "<leader>njp", "<cmd>Neorg workspace practice <CR><cmd> Neorg journal today<cr>", desc = "Practice" },
 			{ "<leader>njg", "<cmd>Neorg workspace general <CR><cmd> Neorg journal today<cr>", desc = "General" },
+			{ "<leader>njs", "<cmd>Neorg workspace school <CR><cmd> Neorg journal today<cr>", desc = "School" },
 		})
 		-- Add the key mappings only for Markdown files in a zk notebook.
 		-- TODO: move to which-key.add

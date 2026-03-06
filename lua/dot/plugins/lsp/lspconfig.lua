@@ -130,6 +130,12 @@ return {
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
 
+			-- Formatting
+			opts.desc = "Format file or range (in visual mode)"
+			keymap.set({ "n", "v" }, "<leader>cf", function()
+				vim.lsp.buf.format()
+			end, opts)
+
 			-- Enable inlay hints if supported
 			if client.server_capabilities.inlayHintProvider then
 				vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
@@ -341,5 +347,15 @@ return {
 			})
 			vim.lsp.enable(server.name)
 		end
+
+		-- Auto-format Clojure files on save using cljfmt (via clojure-lsp)
+		local clojure_format_augroup = vim.api.nvim_create_augroup("clojure_format", { clear = true })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = clojure_format_augroup,
+			pattern = { "*.clj", "*.cljs", "*.cljc", "*.edn" },
+			callback = function()
+				vim.lsp.buf.format()
+			end,
+		})
 	end,
 }
