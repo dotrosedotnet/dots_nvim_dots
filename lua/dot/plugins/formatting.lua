@@ -35,6 +35,7 @@ return {
 				go = { "goimports", "gofmt" },
 				rust = { "rustfmt", lsp_format = "fallback" },
 				toml = { "taplo" },
+			typst = { "typstyle" },
 				-- Use injected formatter for code blocks in markdown, etc.
 				["_"] = { "trim_whitespace" },
 			},

@@ -337,6 +337,7 @@ return {
 			{ name = "bashls", cmd = { "bash-language-server", "start" } },
 			{ name = "jdtls", cmd = { "jdtls" } },
 			{ name = "hls", cmd = { "haskell-language-server", "--lsp" } },
+			{ name = "tinymist", cmd = { "tinymist" } },
 		}
 
 		for _, server in ipairs(simple_servers) do

@@ -56,6 +56,7 @@ return {
 				"supercollider",
 				"tmux",
 				"toml",
+				"typst",
 				"vim",
 				"vimdoc",
 				"yaml",
