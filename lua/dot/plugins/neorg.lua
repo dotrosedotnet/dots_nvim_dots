@@ -29,6 +29,7 @@ return {
 								food = "~/notes/food",
 								practice = "~/notes/practice",
 								school = "~/notes/school",
+								poetry = "~/notes/poetry",
 							},
 							default_workspace = "general",
 						},
