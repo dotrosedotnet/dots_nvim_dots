@@ -30,6 +30,7 @@ return {
 								practice = "~/notes/practice",
 								school = "~/notes/school",
 								poetry = "~/notes/poetry",
+								gilroy = "~/notes/gilroy",
 							},
 							default_workspace = "general",
 						},
