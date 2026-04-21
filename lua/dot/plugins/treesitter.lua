@@ -39,6 +39,7 @@ return {
 			"luadoc",
 			"make",
 			"markdown",
+			"marksman",
 			"markdown_inline",
 			"muttrc",
 			"norg",
