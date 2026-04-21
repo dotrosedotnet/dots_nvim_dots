@@ -326,7 +326,6 @@ return {
 			{ name = "clojure_lsp", cmd = { "clojure-lsp" } },
 			{ name = "beancount", cmd = { "beancount-language-server" } },
 			{ name = "jqls", cmd = { "jq-lsp" } },
-			{ name = "marksman", cmd = { "marksman" } },
 			{ name = "vimls", cmd = { "vim-language-server", "--stdio" } },
 			{ name = "dockerls", cmd = { "docker-langserver", "--stdio" } },
 			{ name = "docker_compose_language_service", cmd = { "docker-compose-langserver", "--stdio" } },
