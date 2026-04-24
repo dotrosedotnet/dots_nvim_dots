@@ -74,6 +74,18 @@ keymap.set("n", "<leader>yd", function()
 	vim.notify("Copied diagnostic(s) to clipboard", vim.log.levels.INFO)
 end, { desc = "Yank (copy) diagnostics on current line" })
 
+-- reload
+keymap.set("n", "<leader>rp", function()
+	vim.cmd("Lazy reload nvim-cmp")
+end, { desc = "Reload nvim-cmp plugin" })
+
+keymap.set("n", "<leader>rs", function()
+	require("luasnip.loaders.from_lua").load({
+		paths = vim.fn.stdpath("config") .. "/luasnippets",
+	})
+	vim.notify("LuaSnip: reloaded", vim.log.levels.INFO)
+end, { desc = "Reload LuaSnip snippets" })
+
 -- colorscheme reload function
 -- MOVED TO NIXOS CONFIG: The reload command is now managed by tintedNvim.nix
 -- which generates ~/.config/nvim/lua/dot/plugins/tinted-reload.lua
