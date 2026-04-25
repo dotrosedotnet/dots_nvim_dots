@@ -1,5 +1,15 @@
 return {
 	"davidgranstrom/scnvim",
+	-- Patch upstream crash in SCNvimDoc.sc:278 (bare String where Array required;
+	-- breaks exportDocMapJson on classes with IMPLEMENTORCLASS, e.g. Document).
+	-- The trailing commit keeps the working tree clean so :Lazy update doesn't
+	-- refuse to pull. grep will fail loudly if upstream ever changes the line.
+	-- Removable once upstream merges a fix.
+	build = table.concat({
+		"sed -i 's|inheritance.add(implKlass.name.asString);|inheritance.add([implKlass.name.asString]);|' scide_scnvim/Classes/SCNvimDoc/SCNvimDoc.sc",
+		"grep -qF 'inheritance.add([implKlass.name.asString])' scide_scnvim/Classes/SCNvimDoc/SCNvimDoc.sc",
+		"git diff --quiet scide_scnvim/Classes/SCNvimDoc/SCNvimDoc.sc || git -c user.email=lazy@local -c user.name=lazy-build -c commit.gpgsign=false commit -q --no-verify -m 'local: implKlass array-wrap' scide_scnvim/Classes/SCNvimDoc/SCNvimDoc.sc",
+	}, " && "),
 	config = function()
 		local scnvim = require("scnvim")
 		local map = scnvim.map
@@ -34,7 +44,7 @@ return {
 				},
 			},
 			documentation = {
-				cmd = "/usr/bin/env pandoc",
+				cmd = vim.fn.exepath("pandoc"),
 			},
 		})
 	end,
