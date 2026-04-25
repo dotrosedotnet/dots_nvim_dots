@@ -12,7 +12,7 @@ return {
 					map("editor.send_block", { "i", "n" }),
 					map("editor.send_selection", "x"),
 				},
-				["<CR>"] = map("postwin.toggle"),
+				-- ["<CR>"] = map("postwin.toggle"),
 				["<M-CR>"] = map("postwin.toggle", "i"),
 				["<M-L>"] = map("postwin.clear", { "n", "i" }),
 				["<C-k>"] = map("signature.show", { "n", "i" }),
@@ -28,9 +28,13 @@ return {
 				},
 			},
 			postwin = {
+				horizontal = true,
 				float = {
-					enabled = true,
+					enabled = false,
 				},
+			},
+			documentation = {
+				cmd = "/usr/bin/env pandoc",
 			},
 		})
 	end,
