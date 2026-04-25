@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-nvim --headless -c "PlenaryBustedDirectory tests/ { minimal_init = 'tests/minimal_init.lua' }"
+cd "$(dirname "$0")"
+
+nvim --headless --noplugin -u tests/minimal_init.lua \
+	-c "PlenaryBustedDirectory tests/ { minimal_init = 'tests/minimal_init.lua' }"
