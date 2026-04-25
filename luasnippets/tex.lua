@@ -31,6 +31,15 @@ local autosnippets = {
 		},
 		fmta("<>_<>", { cap(1), cap(2) })
 	),
+	s(
+		{
+			trig = "([%a])_(%d%d)",
+			regTrig = true,
+			wordTrig = false,
+			condition = helpers.in_mathzone,
+		},
+		fmta("<>_{<>}", { cap(1), cap(2) })
+	),
 }
 
 return regular, autosnippets
