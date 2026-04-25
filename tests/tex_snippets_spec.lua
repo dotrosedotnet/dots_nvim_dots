@@ -30,24 +30,24 @@ local function mock_node_chain(types)
 end
 
 describe("tex snippets", function()
-	local snippets
+	local regular, autosnippets
 
 	before_each(function()
-		snippets = dofile(snippets_path)
+		regular, autosnippets = dofile(snippets_path)
 	end)
 
-	describe(";trivial", function()
-		it("is defined", function()
-			assert.is_not_nil(find_snippet(snippets, ";trivial"))
+	describe(";trivial (regular)", function()
+		it("is in the regular list", function()
+			assert.is_not_nil(find_snippet(regular, ";trivial"))
 		end)
 
 		it("expands to 'IT WORKS'", function()
-			local snip = find_snippet(snippets, ";trivial")
+			local snip = find_snippet(regular, ";trivial")
 			assert.same({ "IT WORKS" }, snip.nodes[1].static_text)
 		end)
 	end)
 
-	describe("//", function()
+	describe("// (autosnippet)", function()
 		local original_get_node
 
 		before_each(function()
@@ -58,15 +58,19 @@ describe("tex snippets", function()
 			vim.treesitter.get_node = original_get_node
 		end)
 
-		it("is defined", function()
-			assert.is_not_nil(find_snippet(snippets, "//"))
+		it("is in the autosnippets list", function()
+			assert.is_not_nil(find_snippet(autosnippets, "//"))
+		end)
+
+		it("is NOT in the regular list", function()
+			assert.is_nil(find_snippet(regular, "//"))
 		end)
 
 		it("expands when cursor is inside displayed_equation", function()
 			vim.treesitter.get_node = function()
 				return mock_node_chain({ "operator", "text", "displayed_equation", "source_file" })
 			end
-			local snip = find_snippet(snippets, "//")
+			local snip = find_snippet(autosnippets, "//")
 			local params = snip:resolveExpandParams("//", "//", {})
 			assert.is_not_nil(params)
 		end)
@@ -75,7 +79,7 @@ describe("tex snippets", function()
 			vim.treesitter.get_node = function()
 				return mock_node_chain({ "text", "source_file" })
 			end
-			local snip = find_snippet(snippets, "//")
+			local snip = find_snippet(autosnippets, "//")
 			local params = snip:resolveExpandParams("//", "//", {})
 			assert.is_nil(params)
 		end)

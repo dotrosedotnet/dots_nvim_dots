@@ -6,10 +6,15 @@ local fmta = require("luasnip.extras.fmt").fmta
 
 local helpers = require("dot.luasnip.helpers")
 
-return {
+local regular = {
 	s(";trivial", t("IT WORKS")),
+}
+
+local autosnippets = {
 	s(
 		{ trig = "//", condition = helpers.in_mathzone },
 		fmta("\\frac{<>}{<>}", { i(1), i(2) })
 	),
 }
+
+return regular, autosnippets
