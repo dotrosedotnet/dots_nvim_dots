@@ -85,6 +85,40 @@ describe("tex snippets", function()
 		end)
 	end)
 
+	describe("sq (autosnippet)", function()
+		local original_get_node
+
+		before_each(function()
+			original_get_node = vim.treesitter.get_node
+		end)
+
+		after_each(function()
+			vim.treesitter.get_node = original_get_node
+		end)
+
+		it("is in the autosnippets list", function()
+			assert.is_not_nil(find_snippet(autosnippets, "sq"))
+		end)
+
+		it("expands inside math", function()
+			vim.treesitter.get_node = function()
+				return mock_node_chain({ "operator", "text", "displayed_equation", "source_file" })
+			end
+			local snip = find_snippet(autosnippets, "sq")
+			local params = snip:resolveExpandParams("sq", "sq", {})
+			assert.is_not_nil(params)
+		end)
+
+		it("does NOT expand in prose", function()
+			vim.treesitter.get_node = function()
+				return mock_node_chain({ "text", "source_file" })
+			end
+			local snip = find_snippet(autosnippets, "sq")
+			local params = snip:resolveExpandParams("sq", "sq", {})
+			assert.is_nil(params)
+		end)
+	end)
+
 	describe("subscript regex (xN -> x_N)", function()
 		local original_get_node
 		local trigger_pattern = "([%a])(%d)"

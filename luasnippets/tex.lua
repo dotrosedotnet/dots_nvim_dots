@@ -23,6 +23,10 @@ local autosnippets = {
 		fmta("\\frac{<>}{<>}", { i(1), i(2) })
 	),
 	s(
+		{ trig = "sq", condition = helpers.in_mathzone },
+		fmta("\\sqrt{<>}", { i(1) })
+	),
+	s(
 		{
 			trig = "([%a])(%d)",
 			regTrig = true,
