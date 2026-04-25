@@ -40,6 +40,39 @@ return {
 				["<F12>"] = map("sclang.hard_stop", { "n", "x", "i" }),
 				["<leader>st"] = map("sclang.start"),
 				["<leader>sk"] = map("sclang.recompile"),
+				["<leader>sh"] = map(function() vim.cmd("SCNvimExt fzf-sc.fuzz help") end),
+				["<leader>sR"] = map(function()
+					vim.notify("[scnvim] Rendering full help corpus...", vim.log.levels.INFO)
+					require("scnvim.help").render_all(vim.schedule_wrap(function()
+						vim.notify("[scnvim] Help corpus rendered.", vim.log.levels.INFO)
+					end))
+				end),
+				["<leader>s/"] = map(function()
+					local help_dir = vim.fn.expand("~/.local/share/SuperCollider/Help")
+					local fzf = require("fzf-lua")
+					fzf.live_grep({
+						cwd = help_dir,
+						prompt = "Help> ",
+						rg_opts = "--glob '*.txt' --column --line-number --no-heading --color=always --smart-case --max-columns=4096",
+						actions = {
+							["default"] = function(selected, opts)
+								if not selected or not selected[1] then
+									return
+								end
+								local entry = fzf.path.entry_to_file(selected[1], opts)
+								if not entry or not entry.path then
+									return
+								end
+								require("scnvim.help").on_open(nil, entry.path)
+								local lines = vim.api.nvim_buf_line_count(0)
+								local line = math.min(tonumber(entry.line) or 1, lines)
+								if line > 0 then
+									vim.api.nvim_win_set_cursor(0, { line, 0 })
+								end
+							end,
+						},
+					})
+				end),
 				["<F1>"] = map_expr("s.boot"),
 				["<F2>"] = map_expr("s.meter"),
 			},
