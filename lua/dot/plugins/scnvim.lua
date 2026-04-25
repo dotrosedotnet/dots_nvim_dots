@@ -39,13 +39,26 @@ return {
 			},
 			postwin = {
 				horizontal = true,
+				size = 10,
 				float = {
 					enabled = false,
 				},
 			},
 			documentation = {
 				cmd = vim.fn.exepath("pandoc"),
+				horizontal = false,
+				direction = "right",
 			},
+		})
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "help.supercollider",
+			desc = "scnvim: <CR> opens help for word under cursor",
+			callback = function(args)
+				vim.keymap.set("n", "<CR>", function()
+					require("scnvim.help").open_help_for(vim.fn.expand("<cword>"))
+				end, { buffer = args.buf, desc = "Open help for <cword>" })
+			end,
 		})
 	end,
 }
