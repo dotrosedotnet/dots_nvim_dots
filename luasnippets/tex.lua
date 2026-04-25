@@ -27,6 +27,10 @@ local autosnippets = {
 		fmta("\\sqrt{<>}", { i(1) })
 	),
 	s(
+		{ trig = "td", condition = helpers.in_mathzone },
+		fmta("^{<>}", { i(1) })
+	),
+	s(
 		{
 			trig = "([%a])(%d)",
 			regTrig = true,
@@ -43,6 +47,15 @@ local autosnippets = {
 			condition = helpers.in_mathzone,
 		},
 		fmta("<>_{<>}", { cap(1), cap(2) })
+	),
+	s(
+		{
+			trig = "([%a])%^(%d%d)",
+			regTrig = true,
+			wordTrig = false,
+			condition = helpers.in_mathzone,
+		},
+		fmta("<>^{<>}", { cap(1), cap(2) })
 	),
 }
 
