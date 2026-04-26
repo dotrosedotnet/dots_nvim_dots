@@ -20,4 +20,22 @@ function M.in_mathzone()
 	return false
 end
 
+local SC_NON_CODE_NODES = {
+	string = true,
+	symbol = true,
+	line_comment = true,
+	block_comment = true,
+}
+
+function M.in_sc_code()
+	local node = vim.treesitter.get_node()
+	while node do
+		if SC_NON_CODE_NODES[node:type()] then
+			return false
+		end
+		node = node:parent()
+	end
+	return true
+end
+
 return M
